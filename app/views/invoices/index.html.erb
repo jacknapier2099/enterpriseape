@@ -18,7 +18,7 @@
         <% @invoices.each do |invoice| %>
         <div class="container">  
         <tr>
-            <td><%= invoice.date %></td>
+          <td><%= invoice.date.strftime ("%Y-%m-%d") %></td>
             <td><%= invoice.company %></td>
             <td><%= invoice.tax %></td>
             <td><%= invoice.salesperson %></td>
