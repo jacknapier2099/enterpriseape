@@ -1,11 +1,15 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+ 
 
   def index
     @companies = Company.all
-    respond_with(@companies)
+  
+    respond_to do |format|
+      format.html
+      format.csv { render text: @companies.to_csv }
+    end
   end
 
   def show
@@ -50,6 +54,6 @@ class CompaniesController < ApplicationController
     end
 
     def company_params
-      params.require(:company).permit(:name, :manager, :status, :terms)
+      params.require(:company).permit(:name, :manager, :status, :terms, :companies )
     end
 end

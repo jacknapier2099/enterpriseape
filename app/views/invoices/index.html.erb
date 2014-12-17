@@ -45,5 +45,12 @@
 
 <br>
 
+<h3>Import Companies</h3> 
+  <%= form_tag import_companies_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Companies" %>
+  <% end %>
+  
+
 <%= link_to 'New Invoice', new_invoice_path %>
 </div>
