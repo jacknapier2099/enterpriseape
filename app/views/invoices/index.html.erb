@@ -48,9 +48,9 @@
 <h3>Import Companies</h3> 
   <%= form_tag import_companies_path, multipart: true do %>
   <%= file_field_tag :file %>
-  <%= submit_tag "Upload Companies" %>
+  <%= submit_tag "Upload Companies", class: 'btn btn-default' %>
   <% end %>
   
 
-<%= link_to 'New Invoice', new_invoice_path %>
+<%= link_to 'New Invoice', new_invoice_path, class: 'btn btn-default' %>
 </div>
