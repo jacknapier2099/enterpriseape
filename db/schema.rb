@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217175619) do
+ActiveRecord::Schema.define(version: 20141218212600) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141217175619) do
     t.string   "salesperson"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status_type"
   end
 
   create_table "users", force: true do |t|
@@ -48,8 +49,6 @@ ActiveRecord::Schema.define(version: 20141217175619) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
